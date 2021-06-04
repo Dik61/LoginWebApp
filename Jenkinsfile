@@ -9,11 +9,11 @@ pipeline {
 		      }}
 		stage('Build') {
 	           steps {
-			   sh '/home/swapnil/Documents/jenkins-server/apache-maven-3.6.0/bin/mvn install'
+			   sh '/home/diksha/Documents/D1/apache-maven-3.6.3/bin/mvn install'
 	                 }}
 		stage('Deployment'){
 		    steps {
-			   sh 'sshpass -p "dev" scp target/LoginWebApp.war dev@172.17.0.2:/home/dev/demo/apache-tomcat-8.5.35/webapps'
+			   sh 'sshpass -p "dev" scp target/LoginWebApp.war dev@172.17.0.3:/home/dev/demo/apache-tomcat-8.5.64/webapps'
 			}}
        		
 	}
